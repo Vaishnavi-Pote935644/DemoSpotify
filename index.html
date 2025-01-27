@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify - Your Favourite Music is Here</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" >
+</head>
+<body>
+   <nav>
+      <ul>
+         <li class="brand">
+            <img src="logo.png" alt="Spotify Logo">Spotify
+         </li>
+         <li>Home</li>
+         <li>About</li>
+      </ul>
+   </nav> 
+   <div class="container">
+      <div class="songList">
+         <h1>Best of NCS - No Copyright Sound</h1>
+         <div class="songItemContainer">
+            <!-- Song Items -->
+            <div class="songItem">
+               <img src="covers/2.jpg"alt="Buddhu Sa Mann">
+               <span class="songName">Buddhu Sa Mann</span>
+               <span class="songlistplay">
+                  <span class="timestamp">03:26 
+                     <i id="1" class="far songItemPlay fa-play-circle"></i>
+                  </span>
+               </span>
+            </div>
+            <div class="songItem">
+               <img src="covers/3.jpg"alt="Iktara Song">
+               <span class="songName">Iktara Song</span>
+               <span class="songlistplay">
+                  <span class="timestamp">04:13 
+                     <i id="2" class="far songItemPlay fa-play-circle"></i>
+                  </span>
+               </span>
+            </div>
+            <div class="songItem">
+               <img src="covers/4.jpg"alt="I Hate Love Story">
+               <span class="songName">I Hate Love Story</span>
+               <span class="songlistplay">
+                  <span class="timestamp">04:45
+                     <i id="3" class="far songItemPlay fa-play-circle"></i>
+                  </span>
+               </span>
+            </div>
+            <div class="songItem">
+               <img src="covers/5.jpg"alt="Ishq Di Chashni">
+               <span class="songName">Ishq Di Chashni </span>
+               <span class="songlistplay">
+                  <span class="timestamp">04:26 
+                     <i id="4" class="far songItemPlay fa-play-circle"></i>
+                  </span>
+               </span>
+            </div>
+            <div class="songItem">
+               <img src="covers/6.jpg"alt="Koi Mil Gaya">
+               <span class="songName">Koi Mil Gaya</span>
+               <span class="songlistplay">
+                  <span class="timestamp">07:17
+                     <i id="5" class="far songItemPlay fa-play-circle"></i>
+                  </span>
+               </span>
+            </div>
+            <div class="songItem">
+               <img src="covers/7.jpg"alt="Shayarana">
+               <span class="songName">Shayarana</span>
+               <span class="songlistplay">
+                  <span class="timestamp">04:18 
+                     <i id="6" class="far songItemPlay fa-play-circle"></i>
+                  </span>
+               </span>
+            </div>
+            <div class="songItem">
+               <img src="covers/8.jpg"alt="Subhan Allah">
+               <span class="songName">Subhan Allah</span>
+               <span class="songlistplay">
+                  <span class="timestamp">04:09
+                     <i id="7" class="far songItemPlay fa-play-circle"></i>
+                  </span>
+               </span>
+            </div>
+            <div class="songItem">
+               <img src="covers/9.jpg"alt="Tum Nhi Ho Mere">
+               <span class="songName">Tum Nhi Ho Mere</span>
+               <span class="songlistplay">
+                  <span class="timestamp">03:44 
+                     <i id="8" class="far songItemPlay fa-play-circle"></i>
+                  </span>
+               </span>
+            </div>
+            <div class="songItem">
+               <img src="covers/10.jpg"alt="Yaaron Dosti Song ">
+               <span class="songName">Yaaron Dosti Song</span>
+               <span class="songlistplay">
+                  <span class="timestamp">04:28
+                     <i id="9" class="far songItemPlay fa-play-circle"></i>
+                  </span>
+               </span>
+            </div>
+            <div class="songItem">
+               <img src="covers/1.jpg"alt="Love You Zindagi ">
+               <span class="songName">Love You Zindagi</span>
+               <span class="songlistplay">
+                  <span class="timestamp">03:52 
+                     <i id="10" class="far songItemPlay fa-play-circle"></i>
+                  </span>
+               </span>
+            </div>
+         </div>
+      </div>
+      <div class="songBanner"></div>
+   </div>
+   <div class="bottom">
+      <input type="range" name="range" id="myProgressBar" min="0" value="0" max="100">
+      <div class="icons">
+         <!-- FontAwesome Icons -->
+         <i class="fas fa-3x fa-step-backward" id="previous"></i>
+         <i class="far fa-3x fa-play-circle" id="masterPlay"></i>
+         <i class="fas fa-3x fa-step-forward" id="next"></i>
+         <button id="fastForward"></button> <!-- Fast Forward Button -->
+      </div>
+      <div class="time-display">
+         <span id="currentTime">0:00</span> / <span id="totalTimeDisplay">0:00</span>
+     </div>
+      <div class="songInfo">
+         <img id="gif" src="covers/palying.Gif" width="42px" alt="Now Playing"> <div id="masterSongName">Love You Zindagi</div>
+      </div>
+   </div>
+   <audio id="audioElement" src=""></audio>
+   <script src="script.js"></script>
+   <script src="https://kit.fontawesome.com/26504e4a1f.js" crossorigin="anonymous"></script>
+</body>
+</html>
