@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify - Your Favourite Music is Here</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" >
+</head>
+<body>
+   <nav>
+      <ul>
+         <li class="brand">
+            <img src="logo.png" alt="Spotify Logo">Spotify
+         </li>
+         <li>Home</li>
+         <li>About</li>
+      </ul>
+   </nav> 
+   <div class="container">
+      <div class="songList">
+         <h1>Best of NCS - No Copyright Sound</h1>
+         <div class="songItemContainer">
+            <!-- Song Items -->
+            <div class="songItem">
+               <img src="covers/2.jpg"alt="Buddhu Sa Mann">
+               <span class="songName">Buddhu Sa Mann</span>
+               <span class="songlistplay">
+                  <span class="timestamp">03:26 
+                     <i id="1" class="far songItemPlay fa-play-circle"></i>
+                  </span>
+               </span>
+            </div>
+            <div class="songItem">
+               <img src="covers/3.jpg"alt="Iktara Song">
+               <span class="songName">Iktara Song</span>
+               <span class="songlistplay">
+                  <span class="timestamp">04:13 
+                     <i id="2" class="far songItemPlay fa-play-circle"></i>
+                  </span>
+               </span>
+            </div>
+            <div class="songItem">
+               <img src="covers/4.jpg"alt="I Hate Love Story">
+               <span class="songName">I Hate Love Story</span>
+               <span class="songlistplay">
+                  <span class="timestamp">04:45
+                     <i id="3" class="far songItemPlay fa-play-circle"></i>
+                  </span>
+               </span>
+            </div>
+            <div class="songItem">
+               <img src="covers/5.jpg"alt="Ishq Di Chashni">
+               <span class="songName">Ishq Di Chashni </span>
+               <span class="songlistplay">
+                  <span class="timestamp">04:26 
+                     <i id="4" class="far songItemPlay fa-play-circle"></i>
+                  </span>
+               </span>
+            </div>
+            <div class="songItem">
+               <img src="covers/6.jpg"alt="Koi Mil Gaya">
+               <span class="songName">Koi Mil Gaya</span>
+               <span class="songlistplay">
+                  <span class="timestamp">07:17
+                     <i id="5" class="far songItemPlay fa-play-circle"></i>
+                  </span>
+               </span>
+            </div>
+            <div class="songItem">
+               <img src="covers/7.jpg"alt="Shayarana">
+               <span class="songName">Shayarana</span>
+               <span class="songlistplay">
+                  <span class="timestamp">04:18 
+                     <i id="6" class="far songItemPlay fa-play-circle"></i>
+                  </span>
+               </span>
+            </div>
+            <div class="songItem">
+               <img src="covers/8.jpg"alt="Subhan Allah">
+               <span class="songName">Subhan Allah</span>
+               <span class="songlistplay">
+                  <span class="timestamp">04:09
+                     <i id="7" class="far songItemPlay fa-play-circle"></i>
+                  </span>
+               </span>
+            </div>
+            <div class="songItem">
+               <img src="covers/9.jpg"alt="Tum Nhi Ho Mere">
+               <span class="songName">Tum Nhi Ho Mere</span>
+               <span class="songlistplay">
+                  <span class="timestamp">03:44 
+                     <i id="8" class="far songItemPlay fa-play-circle"></i>
+                  </span>
+               </span>
+            </div>
+            <div class="songItem">
+               <img src="covers/10.jpg"alt="Yaaron Dosti Song ">
+               <span class="songName">Yaaron Dosti Song</span>
+               <span class="songlistplay">
+                  <span class="timestamp">04:28
+                     <i id="9" class="far songItemPlay fa-play-circle"></i>
+                  </span>
+               </span>
+            </div>
+            <div class="songItem">
+               <img src="covers/1.jpg"alt="Love You Zindagi ">
+               <span class="songName">Love You Zindagi</span>
+               <span class="songlistplay">
+                  <span class="timestamp">03:52 
+                     <i id="10" class="far songItemPlay fa-play-circle"></i>
+                  </span>
+               </span>
+            </div>
+         </div>
+      </div>
+      <div class="songBanner"></div>
+   </div>
+   <div class="bottom">              
+      <input type="range" name="range" id="myProgressBar" min="0" value="0" max="100">
+      <div class="icons">
+         <!-- FontAwesome Icons -->
+         <i class="fas fa-3x fa-step-backward" id="previous"></i>
+         <i class="far fa-3x fa-play-circle" id="masterPlay"></i>
+         <i class="fas fa-3x fa-step-forward" id="next"></i>
+         <button id="fastForward"></button> <!-- Fast Forward Button -->
+      </div>
+      <div class="time-display">
+         <span id="currentTime">0:00</span> / <span id="totalTimeDisplay">0:00</span>
+     </div>
+      <div class="songInfo">
+         <img id="gif" src="covers/palying.Gif" width="42px" alt="Now Playing"> <div id="masterSongName">Love You Zindagi</div>
+      </div>
+   </div>
+   <audio id="audioElement" src=""></audio>
+   <script src="script.js"></script>
+   <script src="https://kit.fontawesome.com/26504e4a1f.js" crossorigin="anonymous"></script>
+</body>
+</html>
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+body {
+    background-color: antiquewhite;
+    font-family: 'Varela Round', sans-serif;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+nav {
+    font-family: 'Ubuntu', sans-serif;
+}
+nav ul {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    height: 60px;
+    background-color: black;
+    color: white;
+    padding: 0 20px;
+}
+nav ul li {
+    padding: 0 12px;
+}
+.brand img {
+    width: 44px;
+    padding: 0;
+}
+.brand {
+    display: flex;
+    align-items: center;
+    font-weight: bolder;
+    font-size: 1.3rem;
+}
+.container {
+    min-height: 72vh;
+    background-color: black;
+    color: white;
+    font-family: 'Varela Round', sans-serif;
+    display: flex;
+    margin: 23px auto;
+    width: 70%;
+    border-radius: 12px;
+    padding: 34px;
+    background-image: url('listing.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.bottom{
+    position: sticky;
+    height: 150px;
+    background-color: black;
+    color: white;
+    bottom: 0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction: column;
+}
+.icons {
+    margin-top: 14px;
+}
+.icons i {
+    cursor: pointer;
+}
+#myProgressBar {
+    width: 80vw;
+    height: 8px;
+    background: #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.songItemContainer { 
+    margin-top: 74px;
+}
+.songItem {
+    height: 50px;
+    display: flex;
+    background-color: white;
+    color: black;
+    width: 80%;
+    margin: 12px 0;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 30px;
+}
+.songItem img {
+    width: 30px;
+    margin: 0 25px;
+    border-radius: 50%;
+}
+.timestamp {
+    margin: 0 23px;
+}
+.timestamp i {
+    cursor: pointer;
+}
+.songInfo {
+    position: absolute;
+    left: 10vw;
+    font-family: 'Varela Round', sans-serif;
+}
+.songInfo img {
+    opacity: 0;
+    transition: opacity 0.4s ease-in;
+}
+.songInfo img:hover {
+    opacity: 1;
+}
+.time-display {
+    margin-top: 10px;
+}
+
+/* #gif {
+    width: 50px;
+    height: 50px;
+    margin-top: 10px;
+} */
+console.log("Welcome to Spotify");
+// Initialize Variables
+let songIndex = 0;
+let audioElement = new Audio('Songs/m1.mpeg');
+let masterPlay = document.getElementById('masterPlay');
+let myProgressBar = document.getElementById('myProgressBar');
+let gif = document.getElementById('gif');
+let masterSongName = document.getElementById('masterSongName');
+let currentTimeDisplay = document.getElementById('currentTime');
+let totalTimeDisplay = document.getElementById('totalTimeDisplay');
+let songItems = Array.from(document.getElementsByClassName('songItem'));
+let Songs=[
+    { songName: "buddhu sa mann", filePath:"Songs/m2.mpeg", coverPath:"covers/2.jpg"},
+    { songName: "Iktara Song", filePath:"Songs/m3.mpeg", coverPath:"covers/3.jpg "},
+    { songName: "i hate Love Story", filePath:"Songs/m4.mpeg", coverPath:"covers/4.jpg" },
+    { songName: "Ishq Di Chashni ", filePath:"Songs/m5.mpeg", coverPath:"covers/5.jpg" },
+    { songName: " Koi Mil Gaya", filePath:"Songs/m6.mpeg", coverPath:"covers/6.jpg" },
+    { songName: "Shayarana", filePath:"Songs/m7.mpeg", coverPath:"covers/7.jpg" },
+    { songName: "Subhan Allah", filePath:"Songs/m8.mpeg", coverPath:"covers/8.jpg" },
+    { songName: "Tum Nhi Ho Mere", filePath:"Songs/m9.mpeg", coverPath:"covers/9.jpg" },
+    { songName: "Yaaron Dosti Song", filePath:"Songs/m10.mpeg", coverPath:"covers/10.jpg" },
+    { songName: "Love You Zindagi", filePath:"Songs/m1.mpeg", coverPath:"covers/1.jpg"},
+];
+
+// Populate Song Items
+songItems.forEach((element, i) => {
+    element.getElementsByTagName("img")[0].src = Songs[i].coverPath;
+    element.getElementsByClassName("songName")[0].innerText = Songs[i].songName;
+});
+
+// Play/Pause Button
+masterPlay.addEventListener('click', () => {
+    if (audioElement.paused || audioElement.currentTime <= 0) {
+        audioElement.play();
+        masterPlay.classList.remove('fa-play-circle');
+        masterPlay.classList.add('fa-pause-circle');
+        gif.style.opacity = 1;
+    } else {
+        audioElement.pause();
+        masterPlay.classList.remove('fa-pause-circle');
+        masterPlay.classList.add('fa-play-circle');
+        gif.style.opacity = 0;
+    }
+});
+
+// Update Progress Bar
+audioElement.addEventListener('timeupdate', () => {
+    if (audioElement.duration) {
+        let progress = parseInt((audioElement.currentTime / audioElement.duration) * 100);
+        myProgressBar.value = progress;
+          // Update Current Time
+          let currentMinutes = Math.floor(audioElement.currentTime / 60);
+          let currentSeconds = Math.floor(audioElement.currentTime % 60);
+          currentSeconds = currentSeconds < 10 ? `0${currentSeconds}` : currentSeconds;
+          currentTimeDisplay.innerText = `${currentMinutes}:${currentSeconds}`;
+    }
+});
+// Update Total Duration
+audioElement.addEventListener('loadedmetadata', () => {
+    let totalMinutes = Math.floor(audioElement.duration / 60);
+    let totalSeconds = Math.floor(audioElement.duration % 60);
+    totalSeconds = totalSeconds < 10 ? `0${totalSeconds}` : totalSeconds;
+    totalTimeDisplay.innerText = `${totalMinutes}:${totalSeconds}`;
+});
+
+// Change Progress Bar
+myProgressBar.addEventListener('change', () => {
+    audioElement.currentTime = (myProgressBar.value * audioElement.duration) / 100;
+});
+
+// Play Selected Song
+const makeAllPlays = () => {
+    Array.from(document.getElementsByClassName('songItemPlay')).forEach((element) => {
+        element.classList.remove('fa-pause-circle');
+        element.classList.add('fa-play-circle');
+    });
+};
+
+Array.from(document.getElementsByClassName('songItemPlay')).forEach((element, i) => {
+    element.addEventListener('click', (e) => {
+        if (audioElement.src.includes(Songs[i].filePath) && !audioElement.paused) {
+            // Pause the current song if it's playing
+            audioElement.pause();
+            e.target.classList.remove('fa-pause-circle');
+            e.target.classList.add('fa-play-circle');
+            masterPlay.classList.remove('fa-pause-circle');
+            masterPlay.classList.add('fa-play-circle');
+            gif.style.opacity = 0;
+        } else {
+            // Play the selected song
+            makeAllPlays();
+            songIndex = i;
+            e.target.classList.remove('fa-play-circle');
+            e.target.classList.add('fa-pause-circle');
+            audioElement.src = Songs[songIndex].filePath;
+            masterSongName.innerText = Songs[songIndex].songName;
+            audioElement.currentTime = 0;
+            audioElement.play();
+            gif.style.opacity = 1;
+            masterPlay.classList.remove('fa-play-circle');
+            masterPlay.classList.add('fa-pause-circle');
+        }
+    });
+});
+
+// Next Song
+document.getElementById('next').addEventListener('click', () => {
+    songIndex = (songIndex + 1) % Songs.length;
+    audioElement.src = Songs[songIndex].filePath;
+    masterSongName.innerText = Songs[songIndex].songName;
+    audioElement.currentTime = 0;
+    audioElement.play();
+    masterPlay.classList.remove('fa-play-circle');
+    masterPlay.classList.add('fa-pause-circle');
+});
+
+// Previous Song
+document.getElementById('previous').addEventListener('click', () => {
+    songIndex = (songIndex - 1 + Songs.length) % Songs.length;
+    audioElement.src = Songs[songIndex].filePath;
+    masterSongName.innerText = Songs[songIndex].songName;
+    audioElement.currentTime = 0;
+    audioElement.play();
+    masterPlay.classList.remove('fa-play-circle');
+    masterPlay.classList.add('fa-pause-circle');
+});
+// Automatically Play Next Song
+audioElement.addEventListener('ended', () => {
+    songIndex = (songIndex + 1) % Songs.length;
+    audioElement.src = Songs[songIndex].filePath;
+    masterSongName.innerText = Songs[songIndex].songName;
+    audioElement.currentTime = 0;
+    audioElement.play();
+    masterPlay.classList.remove('fa-play-circle');
+    masterPlay.classList.add('fa-pause-circle');
+});
+
+interview question based on this project
+ChatGPT said:
+Here are some interview questions based on your Spotify Clone project:
+
+General Questions
+Can you give an overview of your Spotify Clone project?
+What technologies did you use in this project, and why?
+How does the project handle audio playback and controls?
+How did you structure your JavaScript code for managing the player?
+What challenges did you face while developing this project, and how did you overcome them?
+HTML & CSS Questions
+How did you structure the HTML elements for the music player?
+What role does CSS play in the UI design of your project?
+How did you ensure a responsive design for different screen sizes?
+Can you explain the flexbox/grid layout used in this project?
+How did you implement the progress bar and its styling?
+JavaScript & Functionality Questions
+How does the play/pause button toggle functionality work?
+How did you implement the progress bar update in real time?
+What is the purpose of event listeners in your project?
+How did you manage song switching (next/previous song feature)?
+How does the project handle song metadata (duration, timestamps, song name, etc.)?
+How does your project ensure smooth transitions between songs?
+What is the role of setTimeout() or setInterval() in updating UI components?
+How did you ensure that only one song plays at a time?
+Can you explain how you handled pausing and resuming playback for each song?
+What happens when a song finishes playing? How does the auto-play next song feature work?
+Advanced & Optimization Questions
+How could you improve the performance of this music player?
+What JavaScript methods are used for DOM manipulation in your project?
+How could you integrate an API to fetch real-time songs instead of hardcoded ones?
+How would you implement a search/filter feature to find specific songs?
+If you wanted to store the user’s last played song, how would you do it using localStorage?
+How would you implement playlist management (creating, saving, and editing playlists)?
+How could you add visualizations (like waveforms or animations) to enhance the UI?
+How would you implement volume control for the audio player?
+What are some potential accessibility improvements you could make?
+If you were to convert this into a React.js or Angular project, how would you approach it?
